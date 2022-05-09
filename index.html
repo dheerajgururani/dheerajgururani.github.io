@@ -6,6 +6,7 @@
     <title>Dheeraj Gururani - Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -103,9 +104,9 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
         <div class="row">
-            <div class="col-sm embed-responsive embed-responsive-16by9">
+            <div class="col-sm embed-responsive embed-responsive-1by1">
                 <iframe class="embed-responsive-item" src="videos/stock_programming_video.mp4"></iframe>
             </div>
             <div class="col-sm card">
@@ -138,60 +139,194 @@
         </div>
     </div> -->
 
-
-    <form method="post" action="mailto:johnnyk@somewhere.com">
-        <div class="row"></div>
-        <fieldset>
-            <legend>Contact Me</legend>
-
-            <label for="Message"><strong>Message</strong></label><br>
-            <textarea type="Message" name="Message" class="form-control" required></textarea>
+    <div class=" mb-3 px-5 py-5 border border-2">
+        <form method="post" action="mailto:dheerajgururani18@gmail.com">
+            <div class="row"></div>
             <fieldset>
-                <label for="email" required><strong>Email Address</strong></label><br>
-                <input type="text" id="email" name="email">
-            </fieldset>
-            <fieldset>
-                <label for="ratingWeb" required><strong>Rate My Website : </strong></label>
-                <input type="radio" id="rating-5" name="rating" value="5" />
-                <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label
-                    for="rating-4"></label>
-                <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3"></label>
-                <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2"></label>
-                <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1"></label>
-                <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label
-                    for="rating-0"></label>
+                <legend>Contact Me</legend>
 
-            </fieldset>
-            <fieldset>
-                <label for="urgentMessage" required><strong>Urgent Message : </strong></label>
-                <input type="radio" id="rating-5" name="rating1" value="5" />
-                <input type="radio" id="rating-4" name="rating1" value="4" checked="checked" /><label
-                    for="rating-4"></label>
-                <input type="radio" id="rating-3" name="rating1" value="3" /><label for="rating-3"></label>
-                <input type="radio" id="rating-2" name="rating1" value="2" /><label for="rating-2"></label>
-                <input type="radio" id="rating-1" name="rating1" value="1" /><label for="rating-1"></label>
-                <input type="radio" id="rating-0" name="rating1" value="0" class="star-cb-clear" /><label
-                    for="rating-0"></label>
-            </fieldset>
+                <label for="Message" class="form-label"><strong>Message</strong></label><br>
+                <textarea type="Message" name="Message" class="form-control" required></textarea>
+                <fieldset>
+                    <label for="email" class="form-label" required><strong>Email Address</strong></label><br>
+                    <input type="text" id="email" class="form-control" name="email">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="ratingWeb" class="form-check-label" required><strong>Rate My Website : </strong></label>
+                    <input type="radio" id="rating-5" class="form-check-control" name="rating" value="5" />
+                    <input type="radio" id="rating-4" class="form-check-control" name="rating" value="4"
+                        checked="checked" /><label for="rating-4"></label>
+                    <input type="radio" id="rating-3" class="form-check-control" name="rating" value="3" /><label
+                        for="rating-3"></label>
+                    <input type="radio" id="rating-2" class="form-check-control" name="rating" value="2" /><label
+                        for="rating-2"></label>
+                    <input type="radio" id="rating-1" class="form-check-control" name="rating" value="1" /><label
+                        for="rating-1"></label>
+                    <input type="radio" id="rating-0" class="form-check-control" name="rating" value="0"
+                        class="star-cb-clear" /><label for="rating-0"></label>
 
-            <fieldset>
-                <input type="checkbox" name="newsletter" id="newsletter" value="yes">
-                <label for="newsletter">I am not a robot!</label>
-            </fieldset>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="urgentMessage" class="form-check-label" required><strong>Urgent Message :
+                        </strong></label>
+                    <input type="radio" id="rating-5" class="form-check-control" name="rating1" value="5" />
+                    <input type="radio" id="rating-4" name="rating1" value="4" checked="checked" /><label
+                        for="rating-4"></label>
+                    <input type="radio" id="rating-3" class="form-check-control" name="rating1" value="3" /><label
+                        for="rating-3"></label>
+                    <input type="radio" id="rating-2" class="form-check-control" name="rating1" value="2" /><label
+                        for="rating-2"></label>
+                    <input type="radio" id="rating-1" class="form-" name="rating1" value="1" /><label
+                        for="rating-1"></label>
+                    <input type="radio" id="rating-0" class="form-check-control" name="rating1" value="0"
+                        class="star-cb-clear" /><label for="rating-0"></label>
+                </fieldset>
 
-            <fieldset>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
-            </fieldset>
+                <fieldset>
+                    <input type="checkbox" name="newsletter" class="form-check-control" id="newsletter" value="yes">
+                    <label class="form-check-label" for="newsletter">I am not a robot!</label>
+                </fieldset>
 
-            </div>
+                <fieldset>
+                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                    <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
+                </fieldset>
+
+    </div>
     </form>
+    </div>
 
 
 
 
 </body>
-<div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="bi bi-facebook font-size-128"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Company name
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Angular</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">React</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Vue</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Pricing</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Settings</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Orders</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<div class="bg-light py-5">
     <footer>
         <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
                     class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a
