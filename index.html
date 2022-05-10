@@ -36,7 +36,9 @@
     </nav> -->
 
     <nav class="navbar navbar-expand-lg navbar-dark px-1" style="background-color:#2c3840">
-        <a class="navbar-brand" font="intro" href="index.html"><strong>Dheeraj Gururani</strong></a>
+        <a class="navbar-brand" font="intro" href="index.html">
+            <h1><strong>Dheeraj Gururani</strong></h1>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -79,11 +81,12 @@
 
     <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 container-fluid" style="border:1px solid #ddd">
-                <img src="images/Dheeraj.jpg" width="200" height="250" alt="Dheeraj" class="img-fluid">
+            <div class="col-xl-6 col-lg-6 col-md-6 container-fluid text-center" style="border:1px solid #ddd">
+                <img src="images/Dheeraj.jpg" style="max-width:100%;" alt="Dheeraj" class="img-fluid">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6" style="border:1px solid #ddd">
-                <p class="text-justify ">I am Dheeraj Gururani , A Computer Science Student at Eotvos Lorand
+                <p class="text-justify text-middle fs-5 ">I am Dheeraj Gururani , A Computer Science Student at Eotvos
+                    Lorand
                     University ,
                     Budapest. I am a
                     Stipendium
@@ -107,12 +110,13 @@
     <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
         <div class="row ">
             <div class=" container-fluid col-sm embed-responsive embed-responsive-4by3">
-                <iframe class="embed-responsive-item " src="videos/stock_programming_video.mp4"></iframe>
+                <iframe class="embed-responsive-item " width="100%" height="300"
+                    src="videos/stock_programming_video.mp4"></iframe>
             </div>
-            <div class="col-sm container-fluid card">
+            <div class="col-sm  card">
                 <div class="card-body">
                     <h2 class="card-title">My Projects</h2>
-                    <p class="card-text">Take a look at my current and previous projects </p>
+                    <p class="card-text mb-5 fs-5 ">Take a look at my current and previous projects </p>
                     <a href="#" class="btn btn-primary mt-5 btn-rounded">Learn more</a>
                 </div>
             </div>
@@ -141,59 +145,62 @@
 
     <div class=" mb-0 px-5 py-5 border border-2">
         <form method="post" action="mailto:dheerajgururani18@gmail.com">
-            <div class="row"></div>
-            <fieldset>
-                <legend>Contact Me</legend>
-
-                <label for="Message" class="form-label"><strong>Message</strong></label><br>
-                <textarea type="Message" name="Message" class="form-control" required></textarea>
+            <div class="row border border-2">
                 <fieldset>
-                    <label for="email" class="form-label" required><strong>Email Address</strong></label><br>
-                    <input type="text" id="email" class="form-control" name="email">
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="ratingWeb" class="form-check-label" required><strong>Rate My Website : </strong></label>
-                    <input type="radio" id="rating-5" class="form-check-control" name="rating" value="5" />
-                    <input type="radio" id="rating-4" class="form-check-control" name="rating" value="4"
-                        checked="checked" /><label for="rating-4"></label>
-                    <input type="radio" id="rating-3" class="form-check-control" name="rating" value="3" /><label
-                        for="rating-3"></label>
-                    <input type="radio" id="rating-2" class="form-check-control" name="rating" value="2" /><label
-                        for="rating-2"></label>
-                    <input type="radio" id="rating-1" class="form-check-control" name="rating" value="1" /><label
-                        for="rating-1"></label>
-                    <input type="radio" id="rating-0" class="form-check-control" name="rating" value="0"
-                        class="star-cb-clear" /><label for="rating-0"></label>
+                    <legend>
+                        <h2>Contact Me</h2>
+                    </legend>
 
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="urgentMessage" class="form-check-label" required><strong>Urgent Message :
-                        </strong></label>
-                    <input type="radio" id="rating-5" class="form-check-control" name="rating1" value="5" />
-                    <input type="radio" id="rating-4" name="rating1" value="4" checked="checked" /><label
-                        for="rating-4"></label>
-                    <input type="radio" id="rating-3" class="form-check-control" name="rating1" value="3" /><label
-                        for="rating-3"></label>
-                    <input type="radio" id="rating-2" class="form-check-control" name="rating1" value="2" /><label
-                        for="rating-2"></label>
-                    <input type="radio" id="rating-1" class="form-" name="rating1" value="1" /><label
-                        for="rating-1"></label>
-                    <input type="radio" id="rating-0" class="form-check-control" name="rating1" value="0"
-                        class="star-cb-clear" /><label for="rating-0"></label>
-                </fieldset>
+                    <label for="Message" class="form-label"><strong>Message</strong></label><br>
+                    <textarea type="Message" name="Message" class="form-control" required></textarea>
+                    <fieldset>
+                        <label for="email" class="form-label" required><strong>Email Address</strong></label><br>
+                        <input type="text" id="email" class="form-control" name="email">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="ratingWeb" class="form-check-label" required><strong>Rate My Website :
+                            </strong></label>
+                        <input type="radio" id="rating-5" class="form-check-control" name="rating" value="5" />
+                        <input type="radio" id="rating-4" class="form-check-control" name="rating" value="4"
+                            checked="checked" /><label for="rating-4"></label>
+                        <input type="radio" id="rating-3" class="form-check-control" name="rating" value="3" /><label
+                            for="rating-3"></label>
+                        <input type="radio" id="rating-2" class="form-check-control" name="rating" value="2" /><label
+                            for="rating-2"></label>
+                        <input type="radio" id="rating-1" class="form-check-control" name="rating" value="1" /><label
+                            for="rating-1"></label>
+                        <input type="radio" id="rating-0" class="form-check-control" name="rating" value="0"
+                            class="star-cb-clear" /><label for="rating-0"></label>
 
-                <fieldset>
-                    <input type="checkbox" name="newsletter" class="form-check-control" id="newsletter" value="yes">
-                    <label class="form-check-label" for="newsletter">I am not a robot!</label>
-                </fieldset>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="urgentMessage" class="form-check-label" required><strong>Urgent Message :
+                            </strong></label>
+                        <input type="radio" id="rating-5" class="form-check-control" name="rating1" value="5" />
+                        <input type="radio" id="rating-4" name="rating1" value="4" checked="checked" /><label
+                            for="rating-4"></label>
+                        <input type="radio" id="rating-3" class="form-check-control" name="rating1" value="3" /><label
+                            for="rating-3"></label>
+                        <input type="radio" id="rating-2" class="form-check-control" name="rating1" value="2" /><label
+                            for="rating-2"></label>
+                        <input type="radio" id="rating-1" class="form-" name="rating1" value="1" /><label
+                            for="rating-1"></label>
+                        <input type="radio" id="rating-0" class="form-check-control" name="rating1" value="0"
+                            class="star-cb-clear" /><label for="rating-0"></label>
+                    </fieldset>
 
-                <fieldset>
-                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-                    <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-                </fieldset>
+                    <fieldset>
+                        <input type="checkbox" name="newsletter" class="form-check-control" id="newsletter" value="yes">
+                        <label class="form-check-label" for="newsletter">I am not a robot!</label>
+                    </fieldset>
 
-    </div>
-    </form>
+                    <fieldset>
+                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                        <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
+                    </fieldset>
+
+            </div>
+        </form>
     </div>
 
 
