@@ -1,0 +1,56 @@
+nav {
+    background-color: black;
+}
+
+Body {
+    background-color: black;
+    text-size-adjust: auto;
+    font-size: larger;
+    color: yellow;
+}
+
+sizer {
+    width: 300px;
+}
+
+#resume-button {
+    size: larger;
+    color: yellow;
+}
+
+#Main-text {
+
+
+    border-radius: 25px;
+    background-color: black;
+    padding: 20px;
+
+
+}
+
+tr {
+    color: yellow;
+}
+
+.alt {
+    color: yellow;
+}
+
+caption {
+    color: yellow;
+}
+
+.card {
+    background-color: black;
+}
+
+footer {
+    background-color: black;
+    color: yellow;
+    text-emphasis: auto;
+    font-weight: bold;
+}
+
+i {
+    color: yellow;
+}

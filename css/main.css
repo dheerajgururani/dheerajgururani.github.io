@@ -1,0 +1,128 @@
+@media (min-width: 544px) {
+    #Main-text {
+        font-size: smaller;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #Main-text {
+        font-size: smaller;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #Main-text {
+        font-size: smaller;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    #Main-text {
+        font-size: smaller;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+
+@media (min-width: 950px) and (max-width:1100px) {
+    #Main-text {
+        font-size: smaller;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+        color: red;
+    }
+}
+
+nav {
+    background-color: black;
+}
+
+
+sizer {
+    width: 300px;
+}
+
+Body {
+    background: #e08cd4;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffcc94, #e08cd4);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffcc94, #e08cd4);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+#intro {
+    background-image: url("images/cool-background.jpg");
+    background-size: 100% auto;
+
+}
+
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+
+.subhead {
+    color: navy;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+#footer {
+    background-color: #f8f9fa;
+    color: #777;
+
+}
+
+#Main-text {
+
+
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px;
+
+
+}
+
+.card {
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px;
+}
+
+#copyright {
+    background-color: rgba(0, 0, 0, 0.05);
+
+}
+
+.icons {
+    color: #777;
+
+}
+
+.icons:hover {
+    color: black;
+}

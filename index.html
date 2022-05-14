@@ -2,128 +2,138 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Dheeraj Gururani - Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <style>
-        sizer {
-            width: 300px;
-        }
-    </style>
+
+
+
 
 </head>
 
-<header>
-
-    <!-- navbar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div>
-            <h1>Dheeraj Gururani</h1>
-            <a href="index.html">Home</a>
-            <a href="education.html">Education</a>
-            <a href="Projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a download="resume.pdf">Download CV</a>
-        </div>
-    </nav> -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark px-1" style="background-color:#2c3840">
-        <a class="navbar-brand" font="intro" href="index.html">
-            <h1><strong>Dheeraj Gururani</strong></h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ms-auto ">
-                <li class="nav-item  active">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="education.html">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Projects.html">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="skills.html">Skills</a>
-                </li>
-            </ul>
-            <span class="navbar-text">
-                <a href="resume.pdf" download="resume"><button class="btn btn-outline-light btn-rounded my-0 my-sm-0"
-                        type="button" style="outline-color:white">Download
-                        CV</button></a>
-            </span>
-        </div>
-    </nav>
-</header>
-
 <body>
 
+    <header>
 
 
-    <div>
-        <h1 class="container-fluid text-center py-5 border border-2 mb-0 fw-bold"> Website of
-            Dheeraj
-            Gururani</h1>
-    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark px-1">
+            <a class="navbar-brand" href="index.html">
+                <h1><strong>Dheeraj Gururani</strong></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item  active">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
 
-
-    <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 container-fluid text-center" style="border:1px solid #ddd">
-                <img src="images/Dheeraj.jpg" style="max-width:100%;" alt="Dheeraj" class="img-fluid">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <button id="resume-button" class="btn btn-outline-light btn-rounded my-0 my-sm-0" type="submit"
+                        onclick="window.location.href='resume.pdf'" style="outline-color:white">Download
+                        CV</button>
+                </span>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6" style="border:1px solid #ddd">
-                <p class="text-justify text-middle fs-5 ">I am Dheeraj Gururani , A Computer Science Student at Eotvos
-                    Lorand
-                    University ,
-                    Budapest. I am a
-                    Stipendium
-                    Hungaricum Scholar.
-                    I am a budding software developer , I have thorough knowledge of Software Development and version
-                    control.
-                    My programming Skills include but are not limited to Imperative Programming , Functional programming
-                    ,
-                    Object-Oriented Programming , Web development and SQL.
-                    I am very Passionate about business and marketing as well , my first project from a business
-                    prospective was
-                    an Ed-Tech Website , it received over 2600+ visits in just 6 months.
-                </p>
-            </div>
+        </nav>
+    </header>
+
+    <main>
+
+
+
+        <div id="intro">
+            <h1 class="container-fluid text-center py-5 border border-2 mb-0 fw-bold"> Website of
+                Dheeraj
+                Gururani</h1>
         </div>
-    </div>
 
 
-
-
-    <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
-        <div class="row ">
-            <div class=" container-fluid col-sm embed-responsive embed-responsive-4by3">
-                <iframe class="embed-responsive-item " width="100%" height="300"
-                    src="videos/stock_programming_video.mp4"></iframe>
-            </div>
-            <div class="col-sm  card">
-                <div class="card-body">
-                    <h2 class="card-title">My Projects</h2>
-                    <p class="card-text mb-5 fs-5 ">Take a look at my current and previous projects </p>
-                    <a href="projects.html" class="btn btn-primary mt-5 btn-rounded">Learn more</a>
+        <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 container-fluid text-center my-3">
+                    <a href="images/Dheeraj.jpg" target="_blank"><img src="images/Dheeraj.jpg" style="max-width:100%;"
+                            alt="Dheeraj" class="img-fluid"></a>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 my-3" id="Main-text">
+                    <article>
+                        <p class="text-justify text-middle fs-5 pt-5 ">I am Dheeraj Gururani , A Computer
+                            Science Student
+                            at
+                            Eotvos
+                            Lorand
+                            University ,
+                            Budapest. I am a
+                            Stipendium
+                            Hungaricum Scholar.
+                        </p>
+                        <aside>
+                            <p class="text-justify text-middle fs-5 ">
+                                I am a budding software developer , I have thorough knowledge of Software Development
+                                and
+                                version
+                                control.
+                                My programming Skills include but are not limited to Imperative Programming , Functional
+                                programming
+                                ,
+                                Object-Oriented Programming , Web development and SQL.
+                            </p>
+                        </aside>
+                        <p class="text-justify text-middle fs-5 ">I am very Passionate about business and marketing as
+                            well
+                            , my first project from a business
+                            prospective was
+                            an Ed-Tech Website , it received over 2600+ visits in just 6 months.
+                        </p>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- <div> <img src="images/Dheeraj.jpg" width="200" height="250" alt="Dheeraj">
+
+
+        <section>
+            <div class="container-fluid py-5 px-5 border border-2 mx-0 ">
+                <div class="row ">
+                    <div class=" container-fluid col-sm embed-responsive embed-responsive-4by3">
+                        <video class="embed-responsive-item w-100 my-3 " controls height="300"
+                            src="videos/stock_programming_video.mp4"></video>
+                    </div>
+                    <div class="col-sm  card my-3">
+                        <div class="card-body">
+                            <h2 class="card-title">My Projects</h2>
+                            <p class="card-text mb-5 fs-5 ">Take a look at my current and previous projects </p>
+                            <a href="projects.html" class="btn btn-primary mt-5 btn-rounded">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div> <img src="images/Dheeraj.jpg" width="200" height="250" alt="Dheeraj">
         <p>I am Dheeraj Gururani , A Computer Science Student at Eotvos Lorand University , Budapest. I am a Stipendium
             Hungaricum Scholar.
             I am a budding software developer , I have thorough knowledge of Software Development and version control.
@@ -135,7 +145,7 @@
     </div> -->
 
 
-    <!-- <div class="card">
+        <!-- <div class="card">
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -143,98 +153,107 @@
         </div>
     </div> -->
 
-    <div class=" mb-0 px-5 py-5 border border-2">
-        <form method="post" action="mailto:dheerajgururani18@gmail.com">
-            <div class="row border border-2">
-                <fieldset>
-                    <legend>
-                        <h2>Contact Me</h2>
-                    </legend>
-
-                    <label for="Message" class="form-label"><strong>Message</strong></label><br>
-                    <textarea type="Message" name="Message" class="form-control" required></textarea>
+        <div class=" mb-0 px-5 py-5 border border-2">
+            <form method="POST" action="mailto:dheerajgururani18@gmail.com" id="form">
+                <div class="row border border-2">
                     <fieldset>
-                        <label for="email" class="form-label" required><strong>Email Address</strong></label><br>
-                        <input type="text" id="email" class="form-control" name="email">
+                        <legend>
+                            <h2>Contact Me</h2>
+                        </legend>
+
+                        <strong>Message</strong><br>
+                        <textarea name="Message" maxlength="200" class="form-control my-3" required></textarea>
+                        <fieldset class="mb-3">
+                            <label for="email" class="form-label"><strong>Email Address</strong></label><br>
+                            <input type="text" maxlength="30" id="email" class="form-control" name="email" required>
+                        </fieldset>
+                        <fieldset class="form-group my-3">
+                            <strong>Rate My Website :
+                            </strong>
+                            <input type="radio" class="form-check-control" name="ratingSite" id="ratingSite-1"
+                                value="1" /><label for="ratingSite-1"></label>
+                            <input type="radio" class="form-check-control" name="ratingSite" id="ratingSite-2"
+                                value="2" /><label for="ratingSite-2"></label>
+                            <input type="radio" class="form-check-control" name="ratingSite" id="ratingSite-3"
+                                value="3" /><label for="ratingSite-3"></label>
+                            <input type="radio" class="form-check-control" name="ratingSite" id="ratingSite-4" value="4"
+                                checked="checked" /><label for="ratingSite-4"></label>
+                            <input type="radio" class="form-check-control" name="ratingSite" id="ratingSite-5"
+                                value="5" /><label for="ratingSite-5"></label>
+
+
+                        </fieldset>
+                        <fieldset class="form-group mb-3">
+                            <strong>Urgent Message :
+                            </strong>
+                            <input type="radio" class="form-" name="urgentMessageRating" id="ratingMessage-1"
+                                value="1" /><label for="ratingMessage-1"></label>
+                            <input type="radio" class="form-check-control" name="urgentMessageRating"
+                                id="ratingMessage-2" value="2" /><label for="ratingMessage-2"></label>
+                            <input type="radio" class="form-check-control" name="urgentMessageRating"
+                                id="ratingMessage-3" value="3" /><label for="ratingMessage-3"></label>
+                            <input type="radio" name="urgentMessageRating" id="ratingMessage-4" value="4"
+                                checked="checked" /><label for="ratingMessage-4"></label>
+                            <input type="radio" class="form-check-control" name="urgentMessageRating"
+                                id="ratingMessage-5" value="5" /><label for="ratingMessage-5"></label>
+
+                        </fieldset>
+
+                        <fieldset class="my-3">
+                            <input type="checkbox" name="newsletter" class="form-check-control" id="newsletter"
+                                value="yes" required>
+                            <label class="form-check-label" for="newsletter">I am not a robot!</label>
+                        </fieldset>
+
+                        <fieldset class="my-3">
+                            <button type="submit" class="btn btn-primary me-5" value="Submit">Submit</button>
+                            <button type="reset" class="btn btn-primary " value="Reset">Reset</button>
+                        </fieldset>
                     </fieldset>
-                    <fieldset class="form-group">
-                        <label for="ratingWeb" class="form-check-label" required><strong>Rate My Website :
-                            </strong></label>
-                        <input type="radio" id="rating-5" class="form-check-control" name="rating" value="5" />
-                        <input type="radio" id="rating-4" class="form-check-control" name="rating" value="4"
-                            checked="checked" /><label for="rating-4"></label>
-                        <input type="radio" id="rating-3" class="form-check-control" name="rating" value="3" /><label
-                            for="rating-3"></label>
-                        <input type="radio" id="rating-2" class="form-check-control" name="rating" value="2" /><label
-                            for="rating-2"></label>
-                        <input type="radio" id="rating-1" class="form-check-control" name="rating" value="1" /><label
-                            for="rating-1"></label>
-                        <input type="radio" id="rating-0" class="form-check-control" name="rating" value="0"
-                            class="star-cb-clear" /><label for="rating-0"></label>
 
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <label for="urgentMessage" class="form-check-label" required><strong>Urgent Message :
-                            </strong></label>
-                        <input type="radio" id="rating-5" class="form-check-control" name="rating1" value="5" />
-                        <input type="radio" id="rating-4" name="rating1" value="4" checked="checked" /><label
-                            for="rating-4"></label>
-                        <input type="radio" id="rating-3" class="form-check-control" name="rating1" value="3" /><label
-                            for="rating-3"></label>
-                        <input type="radio" id="rating-2" class="form-check-control" name="rating1" value="2" /><label
-                            for="rating-2"></label>
-                        <input type="radio" id="rating-1" class="form-" name="rating1" value="1" /><label
-                            for="rating-1"></label>
-                        <input type="radio" id="rating-0" class="form-check-control" name="rating1" value="0"
-                            class="star-cb-clear" /><label for="rating-0"></label>
-                    </fieldset>
-
-                    <fieldset>
-                        <input type="checkbox" name="newsletter" class="form-check-control" id="newsletter" value="yes">
-                        <label class="form-check-label" for="newsletter">I am not a robot!</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-                        <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-                    </fieldset>
-
-            </div>
-        </form>
-    </div>
-
-
-
-
-</body>
-
-
-<div>
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <h2 class="p-4">Let's Connect</h2>
-        <section class=" justify-content-center justify-content-lg-between p-4 border-bottom">
-            <div class="container-fluid">
-                <ul class="list-inline">
-                    <li class="my-3"><i class="bi bi-geo-alt-fill pr-2"> Budapest,1223,Nagytetenyi ut 162-164</i> </li>
-                    <li class="my-3"> <i class="bi bi-envelope-fill"> gzmi8p@inf.elte.hu</i></li>
-                    <li class="my-3"><i class="bi bi-telephone-fill"> +36 70 586 8873</i></li>
-                </ul>
-            </div>
-            <div class="container-fluid text-center my-1 py-4">
-                <a href="https://www.facebook.com/dheeraj.gururani.16/" class="text-dark text-muted"><i
-                        class="bi bi-facebook mx-2 fs-2"></i></a>
-                <a href="https://www.linkedin.com/in/dheerajgururani/" class="text-dark text-muted"><i
-                        class="bi bi-linkedin mx-2 fs-2"></i></a>
-                <a href="https://www.instagram.com/_mountain_soul__/" class="text-dark text-muted"><i
-                        class="bi bi-instagram mx-2 fs-2"></i></a>
-            </div>
-        </section>
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2022 Copyright:
-            <a class="text-reset fw-bold" href="index.html">Dheeraj Gururani</a>
+                </div>
+            </form>
         </div>
-    </footer>
+    </main>
 
-</div>
+
+
+
+
+
+
+
+    <div id="footer">
+        <footer class="text-center text-lg-start">
+            <h2 class="p-4">Let's Connect</h2>
+            <div class=" justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="container-fluid">
+                    <ul class="list-inline">
+                        <li class="my-3"><i class="bi bi-geo-alt-fill pr-2"> Budapest,1223,Nagytetenyi ut
+                                162-164</i> </li>
+                        <li class="my-3"> <i class="bi bi-envelope-fill"> gzmi8p@inf.elte.hu</i></li>
+                        <li class="my-3"><i class="bi bi-telephone-fill"> +36 70 586 8873</i></li>
+                    </ul>
+                </div>
+                <div class="container-fluid text-center my-1 py-4">
+                    <a href="https://www.facebook.com/dheeraj.gururani.16/" class="icons  "><i
+                            class="bi bi-facebook mx-2 fs-2"></i></a>
+                    <a href="https://www.linkedin.com/in/dheerajgururani/" class="icons "><i
+                            class="bi bi-linkedin mx-2 fs-2"></i></a>
+                    <a href="https://www.instagram.com/_mountain_soul__/" class="icons "><i
+                            class="bi bi-instagram mx-2 fs-2"></i></a>
+                </div>
+                <a href="" id="activate-alt"><img src="high-contrast.svg" alt="high contrast" height="20"></a>
+                <a href="" id="activate-main">Back to normal view</a>
+            </div>
+            <div id="copyright" class="text-center p-4">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold" href="index.html">Dheeraj Gururani</a>
+            </div>
+        </footer>
+
+    </div>
+    <script src="css-switch.js"></script>
+</body>
 
 </html>
