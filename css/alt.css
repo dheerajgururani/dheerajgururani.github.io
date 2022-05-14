@@ -9,6 +9,10 @@ Body {
     color: yellow;
 }
 
+.table-striped-bg {
+    background-color: white;
+}
+
 sizer {
     width: 300px;
 }
