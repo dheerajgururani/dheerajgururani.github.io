@@ -467,9 +467,9 @@ function saveGame() {
         }
     })
     localStorage.setItem('saveGame', JSON.stringify(saveGame))
-    localStorage.setItem('maptype', JSON.stringify(maptype))
-    localStorage.setItem('time', timex)
-    localStorage.setItem('namez', JSON.stringify(namez))
+    localStorage.setItem('maptypee', JSON.stringify(maptype))
+    localStorage.setItem('timee', timex)
+    localStorage.setItem('nameze', JSON.stringify(namez))
 
 
 }
@@ -645,11 +645,11 @@ function reset() {
         td.classList.remove('wrong')
         td.classList.remove('greenBorder')
     })
-    table.querySelectorAll('td').forEach((td) => {
-        if (td.classList.contains('numberedWall')) {
-            td.classList.add('numberedWall')
-        }
-    })
+    // table.querySelectorAll('td').forEach((td) => {
+    //     if (td.classList.contains('numberedWall')) {
+    //         td.classList.add('numberedWall')
+    //     }
+    // })
     keepChecking()
 }
 
@@ -719,6 +719,47 @@ function save() {
 //implement save and load functions
 
 
+function loadGame() {
+    let load = JSON.parse(localStorage.getItem('saveGame'))
+    let maptype = JSON.parse(localStorage.getItem('maptypee'))
+    let timex = JSON.parse(localStorage.getItem('timee'))
+    let namez = JSON.parse(localStorage.getItem('nameze'))
+    document.getElementById("timeDisplay").innerHTML = Time(timex)
+    setName(namez)
+    if (maptype == 1) {
+        map1()
+    }
+    else if (maptype == 2) {
+        map2()
+    }
+    else if (maptype == 3) {
+        map3()
+    }
+
+    let i = 0
+    table.querySelectorAll('td').forEach((td) => {
+        if (load[i] == 'bulb') {
+            td.classList.add('bulb')
+            td.classList.add('coloured')
+        }
+        else if (load[i] == 'coloured') {
+            td.classList.add('coloured')
+        }
+        else if (load[i] == 'wrong') {
+            td.classList.add('wrong')
+        }
+        else if (load[i] == 'greenBorder') {
+            td.classList.add('greenBorder')
+        }
+        i++
+    })
+    keepChecking()
+}
+
+
+
+
+
 
 
 function load(x) {
@@ -728,10 +769,14 @@ function load(x) {
 
     let maptypeLocal = JSON.parse(localStorage.getItem('maptype'))
     setName(JSON.parse(localStorage.getItem('namez')))
-    end = JSON.parse(localStorage.getItem('time'))
+    timex = JSON.parse(localStorage.getItem('time'))
 
     if (x == 0) {
         load = JSON.parse(localStorage.getItem('saveGame'))
+        maptypeLocal = JSON.parse(localStorage.getItem('maptypee'))
+        setName(JSON.parse(localStorage.getItem('nameze')))
+        timex = JSON.parse(localStorage.getItem('timee'))
+
         if (maptypeLocal == 1) {
             map1()
             maptype = 1
@@ -936,11 +981,11 @@ delegate(document, '#map3', 'click', function (event, element1) {
 
 //load saved game if there is one when user clicks on the loadGame button
 
-loadGame.addEventListener('click', () => {
-    table.innerHTML = ""
-    load(0)
-    document.getElementById('mapSelector').style.display = 'none'
-    document.getElementById('floatGame').style.display = 'block'
+loadGameButton.addEventListener('click', () => {
+    // table.innerHTML = ""
+    loadGame()
+    mapSelector.style.display = 'none'
+    floatGame.style.display = 'block'
     // Time(0)
     keepChecking()
     showButtons()
