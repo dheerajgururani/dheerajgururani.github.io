@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    tr,
+    td {
+        border: 1px solid darkgray;
+        border-collapse: collapse;
+    }
+
+    td {
+        width: 50px;
+        height: 50px;
+    }
+
+    .coloured {
+        background-color: goldenrod;
+
+    }
+
+    /* place all three float-gameChild inside float-game side by side
+    they should get equal size on screen and must utilize complete width of page  */
+
+
+
+    .float-game {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        /* align content in center*/
+        align-content: center;
+
+        padding: 20px;
+        margin: 20px;
+
+    }
+
+    .float-gameChild {
+        /* make it float */
+        float: left;
+        /* make it beautiful */
+
+        /*make it utilize the whole width of the page*/
+        padding: 20px;
+        margin: 20px;
+        border: 2px solid black;
+        /* add radius to border */
+        border-radius: 10px;
+
+
+        background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+
+    }
+
+    .float-gameChildMiddle {
+        float: left;
+        padding-top: 20px;
+        margin-top: 20px;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin: 20px;
+        border: 2px solid black;
+        /* add radius to border */
+        border-radius: 10px;
+
+        /* add dark background gradient */
+        background: linear-gradient(to right, skyblue 0%, darkblue 100%);
+
+
+    }
+
+    .float-gameChildright {
+        /* make it float */
+        float: right;
+        /* beautify it*/
+        border: 2px solid black;
+        /* add radius to border */
+        border-radius: 10px;
+
+
+        background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+
+
+
+
+        /*make it utilize the whole width of the page*/
+        padding: 20px;
+        margin: 20px;
+    }
+
+
+    /* .float-gameChildleft {
+        float: left;
+        margin-left: 10px;
+
+    }
+
+
+    .float-gameChildMiddle {
+        float: left;
+        margin-left: 10px;
+        padding-left: 50px;
+
+
+    }
+
+    .float-gameChildright {
+        float: right;
+    } */
+
+
+    .blackBorder {
+        border: 1px solid black;
+    }
+
+    .orangeBorder {
+        border: 3px solid orange;
+    }
+
+    .wall {
+        background-color: black;
+    }
+
+    .numberedWall {
+        color: white;
+        background-color: black;
+        font-size: larger;
+        text-align: center;
+    }
+
+    .greenBorder {
+        border: 4px solid green;
+    }
+
+    .wrong {
+        background-color: red;
+    }
+
+    /*Make a class bulb and add a bulb emoji to every bulb element and make background white*/
+    .bulb::before {
+        content: "💡";
+        text-align: center;
+    }
+
+    .GameButton {
+        background-color: green;
+        color: white;
+        font-size: larger;
+        border-radius: 10px;
+        padding: 3px;
+        margin: 3px;
+        border: 2px solid black;
+    }
+
+    .GameButton:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid green;
+    }
+
+    /* Beautify the element with id GameButtons*/
+    #GameButtons {
+        display: flex;
+
+        padding: 20px;
+        margin: 20px;
+    }
+
+    /*Beautify the page with css*/
+
+    body {
+        background-color: #f5f5f5;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: #333;
+        line-height: 1.5;
+        margin: 0;
+
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: #333;
+        line-height: 1.5;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <!-- make a map selector screen that asks user to choose from 3 maps 7x7(easy), 7x7(difficult) , 10x10
+    use the images of the maps to ask the user, show the three maps side by side, also ask for the name of the player
+    maps should be small and side by side-->
+
+
+    <!--Give Heading "Light Up the Castle"-->
+
+    <h1>Light Up the Castle</h1>
+
+    <div class="mapSelector" id="mapSelector">
+        <h2>Choose a map</h2>
+        <div class="map">
+            <img src="images/map1.png" alt="map1" id="map1" class="blackBorder" width="200px" height="200px">
+            <img src="images/map2.png" alt="map2" id="map2" class="blackBorder" width="200px" height="200px">
+            <img src="images/map3.png" alt="map3" id="map3" class="blackBorder" width="200px" height="200px">
+            <img src="images/CustomMap.png" alt="custom map" id="custom" class="blackBorder" width="200px"
+                height="200px">
+
+            <divS>
+                <label for="playerName">Enter your name</label>
+                <input type="text" name="playerName" id="playerName">
+        </div>
+        <div>
+            <button class="GameButton" id="start">Start</button>
+            <button class="GameButton" onclick="start()">Start</button>
+            <button class="GameButton" onclick="end()">End</button>
+        </div>
+    </div>
+    <!-- show the latest playerName map and Time elapsed-->
+
+
+
+
+
+
+    <!--  <div id="mapSelector">
+        <h2>Choose a map</h2>
+        <div>
+            <img src="images/map1.png" id="map1" alt="map1" width="200px" height="200px">
+            <img src="images/map2.png" id="map2" alt="map2" width="200px" height="200px">
+            <img src="images/map3.png" id="map3" alt="map3" width="200px" height="200px">
+        </div>
+    </div> -->
+
+    <div id="CustomMapMaker">
+        <!-- take input order of map-->
+        <h2>Custom Map Maker</h2>
+        <div>
+            <label for="mapSize">Enter the size of the map</label>
+            <input type="number" name="mapSize" id="mapSize">
+            <button id="createMap" class="GameButton">Create Map</button>
+
+            <!--enter index of row and column as (r,c) and press button insert Wall-->
+            <label for="wallInsert">enter index of row and column and press button insert Wall</label>
+            <input type="number" name="wallrow" id="wallrow" placeholder="row">
+            <input type="number" name="wallcol" id="wallcol" placeholder="column">
+            <button id="insertWall" class="GameButton">Insert Wall</button>
+
+
+            <!--enter index of row , column and a number as (r,c,n)  press button insert numberedWall-->
+            <label for="numberedWallInsert">enter index of row , column and a number and press button insert
+                numberedWall</label>
+            <input type="number" name="numberedWallrow" id="numberedWallrow" placeholder="row">
+            <input type="number" name="numberedWallcol" id="numberedWallcol" placeholder="column">
+            <input type="number" name="numberedWallnumber" id="numberedWallnumber" min="0" max="4" placeholder="number">
+            <button id="insertNumberedWall" class="GameButton">Insert numberedWall</button>
+
+
+
+        </div>
+        <div>
+            <button id="saveMap" class="GameButton">Save Map</button>
+            <button id="StartGame" class="GameButton">Start Game</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--make hideable and showable panel for game-->
+
+
+
+
+
+    <div class="float-game" id="floatGame">
+
+
+        <div class="float-gameChild">
+            <h2>Leaderboard</h2>
+            <div id="previousGames">
+            </div>
+
+            <!-- make a button to load the last saved game-->
+            <div class="loadGame">
+                <button class="GameButton" id="loadGame">Load Game</button>
+            </div>
+        </div>
+
+
+        <div class="float-gameChildMiddle">
+            <table>
+            </table>
+
+            <div id="GameButtons">
+                <button id="resetButton" class="GameButton">Reset</button>
+                <button id="saveButton" class="GameButton">Save</button>
+                <button id="loadButton" class="GameButton">Load</button>
+                <button id="undoButton" class="GameButton">Undo</button>
+            </div>
+
+        </div>
+
+
+        <div class="float-gameChildright">
+            <h3>Player</h3>
+            <p id="playerNameDisplay"></p>
+            <h3>Time Elapsed</h3>
+            <p id="timeDisplay"></p>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>
