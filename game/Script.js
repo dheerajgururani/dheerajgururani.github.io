@@ -956,21 +956,27 @@ CustomMapMaker.style.display = 'none'
 
 
 function CustomMap(event, element) {
+    mapSelector.style.display = 'none'
     CustomMapMaker.style.display = 'block'
 
 
     // create and show Table when the createMap button is clicked
 
     createMap.addEventListener('click', () => {
-        table.innerHTML = ""
-        n = document.getElementById('mapSize').value
         // table.innerHTML = ""
+        n = document.getElementById('mapSize').value
+        table.innerHTML = ""
         createTable(n)
+        // GameChildMiddle.style.display = 'block'
+        floatGame.style.display = 'block'
 
 
     })
 
     // show the 
+
+    //implement restartGame button
+
 
     // insert wall and show it in the table, clear the input when insertWall button is clicked
     // insert numberedWall and show it in the table, clear the input when insertNumberedWall button is clicked
@@ -1003,19 +1009,27 @@ function CustomMap(event, element) {
     //     showButtons()
     //     saveCustomMaps()
     // })
-    // StartGame.addEventListener('click', () => {
-    //     CustomMapMaker.style.display = 'none'
-    //     keepChecking()
-    //     showButtons()
-    //     start = Date.now();
-    //     // PreviousGames()
+    StartGame.addEventListener('click', () => {
+        CustomMapMaker.style.display = 'none'
+        floatGame.style.display = 'block'
+        keepChecking()
+        showButtons()
+        start = Date.now();
+        // PreviousGames()
 
-    // })
+    })
 
     // colorDown and colorLeft functions are not working properly
 
 
 }
+
+restartGame.addEventListener('click', () => {
+    reset()
+    floatGame.style.display = 'none'
+    mapSelector.style.display = 'block'
+    timex = 0
+})
 
 
 
