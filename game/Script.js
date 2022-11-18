@@ -1,3 +1,8 @@
+
+let start = 0
+let end = 0
+let timex = 0
+
 function delegate(parent, child, when, what) {
     function eventHandlerFunction(event) {
         let eventTarget = event.target
@@ -440,6 +445,35 @@ function checkNumberedWall() {
 
 // }
 
+function saveGame() {
+
+    let saveGame = []
+    table.querySelectorAll('td').forEach((td) => {
+        if (td.classList.contains('wrong')) {
+            saveGame.push('wrong')
+        }
+        else if (td.classList.contains('bulb')) {
+            saveGame.push('bulb')
+            //saveGame.push('coloured')
+        }
+        else if (td.classList.contains('coloured')) {
+            saveGame.push('coloured')
+        }
+        else if (td.classList.contains('greenBorder')) {
+            saveGame.push('greenBorder')
+        }
+        else {
+            saveGame.push('none')
+        }
+    })
+    localStorage.setItem('saveGame', JSON.stringify(saveGame))
+    localStorage.setItem('maptype', JSON.stringify(maptype))
+    localStorage.setItem('time', timex)
+    localStorage.setItem('namez', JSON.stringify(namez))
+
+
+}
+
 
 
 
@@ -551,9 +585,9 @@ function Time(e) {
 }
 
 
-let start = 0
-let end = 0
-let timex = 0
+// let start = 0
+// let end = 0
+// let timex = 0
 
 
 
@@ -564,7 +598,7 @@ function keepChecking() {
     end = Date.now();
     timex = (Math.floor(end - start) / 1000)
     document.getElementById("timeDisplay").innerHTML = Time(timex)
-    // save()
+    saveGame()
     let allColoured = true
     let allGreen = true
     table.querySelectorAll('td').forEach((td) => {
@@ -583,9 +617,11 @@ function keepChecking() {
         PreviousGames()
         alert('You have won')
         reset()
+        return
     }
     else if (allColoured && !allGreen) {
         alert('You have lost')
+        return
     }
     else {
         checkNumberedWall()
@@ -639,7 +675,7 @@ function save() {
     })
     localStorage.setItem('save', JSON.stringify(save))
     localStorage.setItem('maptype', JSON.stringify(maptype))
-    localStorage.setItem('timex', JSON.stringify(timex))
+    localStorage.setItem('time', JSON.stringify(timex))
     localStorage.setItem('namez', JSON.stringify(namez))
 }
 
@@ -686,12 +722,16 @@ function save() {
 
 
 function load(x) {
+    reset()
+
     let load = JSON.parse(localStorage.getItem('save'))
+
     let maptypeLocal = JSON.parse(localStorage.getItem('maptype'))
     setName(JSON.parse(localStorage.getItem('namez')))
-    document.getElementById("timeDisplay").innerHTML = Time(JSON.parse(localStorage.getItem('timex')))
+    end = JSON.parse(localStorage.getItem('time'))
 
     if (x == 0) {
+        load = JSON.parse(localStorage.getItem('saveGame'))
         if (maptypeLocal == 1) {
             map1()
             maptype = 1
@@ -706,11 +746,7 @@ function load(x) {
         }
     }
 
-    //call save function if page is closed or refreshed
-    window.onbeforeunload = function () {
-        save()
-    }
-
+    //call save function if page is closed or refreshed 
 
     table.querySelectorAll('td').forEach((td, index) => {
         if (load[index] === 'bulb') {
@@ -732,6 +768,8 @@ function load(x) {
             return
         }
     })
+
+    keepChecking()
 
 }
 
@@ -807,34 +845,39 @@ delegate(document, '#map1', 'click', function (event, element1) {
 
 // function to store playerName , maptype and time elapsed for the 5 last games
 
-// function PreviousGames() {
-//     let playerName = document.getElementById('playerName').value
-//     let time = Time(timex)
-//     let map = maptype
-//     let previousGames = JSON.parse(localStorage.getItem('previousGames')) || []
-//     previousGames.push({ playerName, time, map })
-//     localStorage.setItem('previousGames', JSON.stringify(previousGames))
-//     console.log(previousGames)
-// }
+function PreviousGames() {
+    let playerName = document.getElementById('playerName').value
+    let time = Time(timex)
+    let map = maptype
+    let previousGames = JSON.parse(localStorage.getItem('previousGames')) || []
+    previousGames.push({ playerName, time, map })
+    localStorage.setItem('previousGames', JSON.stringify(previousGames))
+    console.log(previousGames)
+}
 
-// // function to display the 5 last games
-// // function to display the 5 last games
+// function to display the 5 last games
+// function to display the 5 last games
 
-// function displayPreviousGames() {
-//     let previousGames = JSON.parse(localStorage.getItem('previousGames')) || []
-//     let previousGamesDiv = document.getElementById('previousGames')
-//     previousGamesDiv.innerHTML = ''
+function displayPreviousGames() {
+    let previousGames = JSON.parse(localStorage.getItem('previousGames')) || []
+    let previousGamesDiv = document.getElementById('previousGames')
+    previousGamesDiv.innerHTML = ''
 
-//     // only display the 5 last games
-//     previousGames = previousGames.slice(-5)
+    // only display the 5 last games
+    // if (previousGames.length > 5) {
+    //     previousGames = previousGames.slice(previousGames.length - 5)
+    // }
 
-//     //show in reverse order
-//     previousGames.reverse().forEach((game) => {
-//         let div = document.createElement('div')
-//         div.innerHTML = `Player: ${game.playerName} - Time: ${game.time} - Map: ${game.map}`
-//         previousGamesDiv.appendChild(div)
-//     })
-// }
+    //show in the  previousGames the 5 last games
+    previousGames.forEach((game) => {
+        let div = document.createElement('div')
+        div.innerHTML = `Player: ${game.playerName} - Time: ${game.time} - Map: ${game.map}`
+        previousGamesDiv.appendChild(div)
+    })
+
+
+
+}
 
 
 
@@ -896,6 +939,9 @@ delegate(document, '#map3', 'click', function (event, element1) {
 loadGame.addEventListener('click', () => {
     table.innerHTML = ""
     load(0)
+    document.getElementById('mapSelector').style.display = 'none'
+    document.getElementById('floatGame').style.display = 'block'
+    // Time(0)
     keepChecking()
     showButtons()
 })
@@ -1048,5 +1094,6 @@ restartGame.addEventListener('click', () => {
 delegate(table, 'td', 'click', doColouring)
 // displayPreviousGames()
 delegate(document, '#custom', 'click', CustomMap)
+displayPreviousGames()
 
 

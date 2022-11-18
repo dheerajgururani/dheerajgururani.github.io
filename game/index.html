@@ -55,6 +55,7 @@
         padding: 20px;
         margin: 20px;
         border: 2px solid black;
+        font-size: smaller;
         /* add radius to border */
         border-radius: 10px;
 
@@ -67,8 +68,8 @@
         float: left;
         padding-top: 20px;
         margin-top: 20px;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         margin: 20px;
         border: 2px solid black;
         /* add radius to border */
@@ -82,7 +83,7 @@
 
     .float-gameChildright {
         /* make it float */
-        float: right;
+        float: left;
         /* beautify it*/
         border: 2px solid black;
         /* add radius to border */
@@ -234,6 +235,10 @@
             <img src="images/CustomMap.png" alt="custom map" id="custom" class="blackBorder" width="200px"
                 height="200px">
 
+            <div class="loadGame">
+                <button class="GameButton" id="loadGame">Load Game</button>
+            </div>
+
             <div>
                 <label for="playerName">
                     <h3>Enter your name</h3>
@@ -323,9 +328,7 @@
             </div>
 
             <!-- make a button to load the last saved game-->
-            <div class="loadGame">
-                <button class="GameButton" id="loadGame">Load Game</button>
-            </div>
+
 
             <!--make a button to restart game-->
             <div class="restartGame">
