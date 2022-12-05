@@ -198,7 +198,7 @@ function getGradeFinal(object) {
             return 3;
         } else if (X >= 50) {
             return 2;
-        } else if (X > 50) {
+        } else if (X < 50) {
             return "FAILED";
         }
     }
