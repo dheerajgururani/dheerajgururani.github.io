@@ -13,6 +13,7 @@ $("#btn").click(function () {
     document.getElementById("info").style.display = "none";
     let x = document.getElementById('link').value;
     if (x != "") {
+        x = x.split('/d/')[1].split('/edit')[0];
         url = 'https://gsx2json.com/api?id=' + x + '&sheet=Sheet1&columns=False';
     }
 
@@ -189,7 +190,17 @@ function getGradeFinal(object) {
         return "FAILED";
     } else {
 
-        let X = (((HWPoints / 800) * 100) * 0.15) + ((MidtermQuizPoints + EndtermQuizPoints) * 0.15) + (MidtermPoints * 0.35) + (EndtermPoints * 0.35);
+        // let X = (((HWPoints / 800) * 100) * 0.15) + ((MidtermQuizPoints + EndtermQuizPoints) * 0.15) + (MidtermPoints * 0.35) + (EndtermPoints * 0.35);
+        // X is max 100 average of HWPoints is 15% of X, sum of MidtermQuizPoints and EndtermQuizPoints is 15% of X, MidtermPoints is 35% of X, EndtermPoints is 35% of X
+        // calculate X 
+        // implement your code here
+        let X = (((HWPoints / 800) * 15) + (((MidtermQuizPoints + +EndtermQuizPoints) / 50) * 15) + ((MidtermPoints / 100) * 35) + ((EndtermPoints / 100) * 35));
+        // console.log(X);
+        // console.log((HWPoints / 800) * 15);
+        // console.log(((MidtermQuizPoints + +EndtermQuizPoints) / 50) * 15);
+        // console.log((MidtermPoints / 100) * 35);
+        // console.log((EndtermPoints / 100) * 35);
+
         if (X > 85) {
             return 5;
         } else if (X >= 70) {
@@ -205,7 +216,7 @@ function getGradeFinal(object) {
 }
 
 function calculateGrade() {
-    let FullName = document.getElementById("FullName").value;
+    // let FullName = document.getElementById("FullName").value;
     let HWPoints = document.getElementById("HWPoints").value;
     let PTPoints = document.getElementById("PTPoints").value;
     // let HWPointsArray = HWPoints.split(",");
@@ -226,20 +237,23 @@ function calculateGrade() {
     //     PTPointsSum += parseInt(PTPointsArray[i]);
     // }
     let object = {
-        FullName: FullName,
-        HWPoints: HWPoints,
-        PTPoints: PTPoints,
-        MidtermPoints: MidtermPoints,
-        EndtermPoints: EndtermPoints,
-        MiniQuizPoints: MiniQuizPoints,
-        MidtermQuizPoints: MidtermQuizPoints,
-        EndtermQuizPoints: EndtermQuizPoints
+        // FullName: FullName,
+        HWPoints: parseInt(HWPoints),
+        PTPoints: parseInt(PTPoints),
+        MidtermPoints: parseInt(MidtermPoints),
+        EndtermPoints: parseInt(EndtermPoints),
+        MiniQuizPoints: parseInt(MiniQuizPoints),
+        MidtermQuizPoints: parseInt(MidtermQuizPoints),
+        EndtermQuizPoints: parseInt(EndtermQuizPoints)
 
 
     }
+    // console.log(object);
     let grade = getGradeFinal(object);
     document.getElementById("grade").innerHTML = grade;
 }
+
+
 
 
 

@@ -104,6 +104,47 @@
             font-family: verdana;
             font-size: 20px;
         }
+
+        #Assgn {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+        }
+
+        #Midtermm {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+        }
+
+        #Endtermm {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+        }
+
+
+
+
+
+
+
+        h2 {
+            font-family: verdana;
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -140,24 +181,31 @@
 
     <div id="ManualData">
         <h2>Manual Data</h2>
+        <p>For HW,PT,MiniQuiz Enter sum of best 8 for others enter the best score</p>
 
-        <p>For HW,PT,MiniQuiz Enter sum of best 8 for others enter the best scre</p>
-        <p>Enter your name:</p>
-        <input class="input" type="text" id="FullName">
-        <p>Enter sum of your HW Points:</p>
-        <input class="input" type="text" id="HWPoints">
-        <p>Enter sum of your PT Points: </p>
-        <input class="input" type="text" id="PTPoints">
-        <p>Enter sum of your MiniQuiz Points:</p>
-        <input class="input" type="text" id="MiniQuizPoints">
-        <p>Enter your best Midterm Points : </p>
-        <input class="input" type="text" id="MidtermPoints">
-        <p>Enter your best Midterm Quiz Score : </p>
-        <input class="input" type="text" id="MidtermQuizPoints">
-        <p>Enter your best Endterm Points : </p>
-        <input class="input" type="text" id="EndtermPoints">
-        <p>Enter your best Endterm Quiz Score : </p>
-        <input class="input" type="text" id="EndtermQuizPoints">
+        <div id="Assgn">
+            <h2>Weekly Assignments</h2>
+            <p>Enter sum of your HW Points (max 800):</p>
+            <input class="input" type="text" id="HWPoints">
+            <p>Enter sum of your PT Points (max 800): </p>
+            <input class="input" type="text" id="PTPoints">
+            <p>Enter sum of your MiniQuiz Points (max 80):</p>
+            <input class="input" type="text" id="MiniQuizPoints">
+        </div>
+        <div id="Midtermm">
+            <h2>Midterm</h2>
+            <p>Enter your best Midterm Points (max 100): </p>
+            <input class="input" type="text" id="MidtermPoints">
+            <p>Enter your best Midterm Quiz Score (max 25): </p>
+            <input class="input" type="text" id="MidtermQuizPoints">
+        </div>
+        <div id="Endtermm">
+            <h2>Endterm</h2>
+            <p>Enter your best Endterm Points (max 100): </p>
+            <input class="input" type="text" id="EndtermPoints">
+            <p>Enter your best Endterm Quiz Score (max 25): </p>
+            <input class="input" type="text" id="EndtermQuizPoints">
+        </div>
 
 
 
