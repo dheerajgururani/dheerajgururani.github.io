@@ -7,8 +7,11 @@ let url = 'https://gsx2json.com/api?id=1hFnrv9y1ZTce0tDlWuXTJ9wwrwvFB_rw54-9z4lA
 
 
 $("#btn").click(function () {
+    // document.getElementById("info").style.display = "none";
+    // let x = document.getElementById('link').value.split('/d/')[1].split('/edit')[0];
+    // url = 'https://gsx2json.com/api?id=' + x + '&sheet=Sheet1&columns=False';
     document.getElementById("info").style.display = "none";
-    let x = document.getElementById('link').value.split('/d/')[1].split('/edit')[0];
+    let x = document.getElementById('link').value;
     if (x != "") {
         url = 'https://gsx2json.com/api?id=' + x + '&sheet=Sheet1&columns=False';
     }
@@ -21,7 +24,19 @@ $("#btn").click(function () {
         // in the array will have the FullName and the sum of the points for that student
         data = data.rows;
         let TotalPointsArray = [];
+        // let newObject = {};
 
+        //Data contains an array of objects, each object is a row in the spreadsheet
+        // evry object has a property called FullName, we will use this to find all the rows with the same FullName
+        // every object has a Assigment property, which is HW1 , HW2 ... HW10 or PT1, Pt2 ... PT10
+        // we need to sum all the PT and HW points for each student and put them in an array of objects
+        // each object will have fullName , HWsum and PTsum 
+        //implement your code here
+
+        // loop through the data array
+        // for each object in the array, check if the FullName is already in the TotalPointsArray
+        // if it is not, add a new object to the TotalPointsArray with the FullName and the points for that Assignments
+        // if it is, find the object in the TotalPointsArray with the same FullName , then check if the Assignments is HW or PT and add the points to the correct property
 
         for (let i = 0; i < data.length; i++) {
             let FullName = data[i].FullName;
@@ -77,13 +92,16 @@ $("#btn").click(function () {
                 } else if (Assignments.includes("EndtermPoints")) {
                     newObject.EndtermPoints = Points;
                 }
+                TotalPointsArray.push(newObject);
             }
+
+
         }
 
         console.log(TotalPointsArray);
 
         // loop through the TotalPointsArray , sort the HWPointsArray and PTPointsArray in ascescending order and sum all but the first 2 values in each array, put the sum in a new property called HWPoints and PTPoints
-
+        // implement your code here
 
         for (let i = 0; i < TotalPointsArray.length; i++) {
             let HWPointsArray = TotalPointsArray[i].HWPointsArray;
@@ -109,7 +127,23 @@ $("#btn").click(function () {
 
         console.log(TotalPointsArray);
 
+        //make a function that takes an object of the TotalPointsArray and returns a grade based on the following criteria
+        // if the PTPoints are less than 400, the grade is 1 . otherwise if the HWPoints is between 0-300 grade 2 , 301 - 500 grade 3
+        // 500-700 grade 4 and 700 and above grade 5
 
+        function getGrade(object) {
+            if (object.PTPoints < 400) {
+                return 1;
+            } else if (object.HWPoints >= 0 && object.HWPoints <= 300) {
+                return 2;
+            } else if (object.HWPoints >= 301 && object.HWPoints <= 500) {
+                return 3;
+            } else if (object.HWPoints >= 501 && object.HWPoints <= 700) {
+                return 4;
+            } else if (object.HWPoints >= 701) {
+                return 5;
+            }
+        }
 
 
 
