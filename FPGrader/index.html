@@ -1,135 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    ul {
-        size: 2em;
-        font-weight: bolder;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <title>My First Web Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-    .newEmperor {
-        list-style-type: '👑';
-    }
-</style>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        #selection {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+
+        }
+
+        #ManualData {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            display: none;
+        }
+
+        #AutoData {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            display: none;
+        }
+
+        /*beautify the button*/
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        /*beautify the input*/
+        .input {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 10px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+        }
+
+        #info {
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            width: auto;
+            height: auto;
+            display: none;
+        }
+
+        /*beautify the table*/
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        /*
+        make element with id "help" underlined with a dotted line and a different color
+        */
+        #help {
+            text-decoration: underline dotted;
+            color: #0000FF;
+        }
+
+        /*beautify all the p text*/
+        p {
+            font-family: verdana;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
 
 <body>
-    <ul id="candidates"></ul>
+
+    <!--give heading to page grade Calculator FP-->
+    <h1>Grade Calculator FP</h1>
+    <!--ask user to select between automatic and manual calculation with thw help of two big buttons-->
+    <div id="selection">
+        <h2>Choose your calculation method</h2>
+        <button class="button" id="manual" type="button">Manual</button>
+        <button class="button" id="auto" type="button">Automatic</button>
+    </div>
+
+
+    <div id="AutoData">
+        <h1>Auto Calculate</h1>
+        <p>Enter the link to your google sheet</p>
+        <input class="input" type="text" id="link" placeholder="Enter link">
+        <button class="button" id="btn">Calculate Grades</button>
+        <p id="help"> Link Criteria </button>
+        <div id="info">
+            <p>Please make sure Anyone can edit is turned On</p>
+            <p>Also make sure the sheet has three columns with the following headings</p>
+            <p>FullName, Assignments, Points </p>
+            <p>Assignments field can only have names like HW1,HW2,ExtraHW1.... PT1,PT2,ExtraPT1.... MiniQuizPoints
+                MidtermPoints MidtermQuizPoints
+                EndtermPoints EndtermQuizPoints</p>
+        </div>
+        <table id="table">
+        </table>
+    </div>
+
+    <div id="ManualData">
+        <h2>Manual Data</h2>
+
+        <p>For HW,PT,MiniQuiz Enter sum of best 8 for others enter the best scre</p>
+        <p>Enter your name:</p>
+        <input class="input" type="text" id="FullName">
+        <p>Enter sum of your HW Points:</p>
+        <input class="input" type="text" id="HWPoints">
+        <p>Enter sum of your PT Points: </p>
+        <input class="input" type="text" id="PTPoints">
+        <p>Enter sum of your MiniQuiz Points:</p>
+        <input class="input" type="text" id="MiniQuizPoints">
+        <p>Enter your best Midterm Points : </p>
+        <input class="input" type="text" id="MidtermPoints">
+        <p>Enter your best Midterm Quiz Score : </p>
+        <input class="input" type="text" id="MidtermQuizPoints">
+        <p>Enter your best Endterm Points : </p>
+        <input class="input" type="text" id="EndtermPoints">
+        <p>Enter your best Endterm Quiz Score : </p>
+        <input class="input" type="text" id="EndtermQuizPoints">
+
+
+
+
+        <button class="button" id="getGrade">Calculate Grade</button>
+
+
+        <p id="grade"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
+<footer>
+    <p>Created by: <a href="https://coderjohn69.github.io/">Dheeraj Gururani</a></p>
+
+</footer>
+
 </html>
-
-<script>
-    function delegate(parent, child, when, what) {
-        function eventHandlerFunction(event) {
-            let eventTarget = event.target
-            let eventHandler = this
-            let closestChild = eventTarget.closest(child)
-
-            if (eventHandler.contains(closestChild)) {
-                what(event, closestChild)
-            }
-        }
-
-        parent.addEventListener(when, eventHandlerFunction)
-    }
-    /*
-    candidateName: the name of the person that wants to be Emperor
-    army: the size of the army of this person (it is not needed until task 3)
-    likelyToVote: the name of the Electors who are likely to vote for this person (4 names means 4 votes for the candidate)
-    */
-    const candidates = [
-        {
-            candidateName: 'Paul Atreides',
-            army: 22000,
-            likelyToVote: ['Duke Simba Mufason', 'Paul Atreides', 'King Elrond of Rivendell']
-        },
-        {
-            candidateName: 'Babar',
-            army: 80000,
-            likelyToVote: ['T\'Challa', 'Princess Bubblegum', 'Princess Zelda', 'Julien', 'King Shrek']
-        },
-        {
-            candidateName: 'Padmé Amidala',
-            army: 34000,
-            likelyToVote: ['Queen Elsa', 'Renly Baratheon', 'Kuzko']
-        },
-        {
-            candidateName: 'Sheev Palpatine',
-            army: 45000,
-            likelyToVote: ['Duke Scar', 'Sheev Palpatine', 'Firelord Ozai', 'Bowser', 'The Imperial Senate', 'Queen Jadis of Narnia']
-        },
-        {
-            candidateName: 'Daenerys Targaryen',
-            army: 120000,
-            likelyToVote: ['Jon Snow']
-        },
-        {
-            candidateName: 'Julien',
-            army: 12000,
-            likelyToVote: ['Renly Baratheon', 'Retexis']
-        }
-    ]
-
-
-    //Task 1
-    console.log("The candidate likely to get the most votes is :", Task1());
-    function Task1() {
-
-        return candidates.reduce((a, b) => a.likelyToVote.length > b.likelyToVote.length ? a : b).candidateName
-
-    }
-
-    //Task2
-    //I didnt understand wheteher to log just the names or all details of the candidates, so i logged all details
-    console.log(
-        candidates.filter(candidate => candidate.likelyToVote.includes(candidate.candidateName)) //.map(candidate => candidate.candidateName) to log only names
-    );
-
-
-    //Task3
-    console.log(
-        candidates.map(candidate => {
-            return {
-                candidateName: candidate.candidateName,
-                points: candidate.likelyToVote.length * candidate.army / 1000
-            }
-        })
-    );
-
-
-    //Task4
-    const candidates_list = document.getElementById('candidates');
-
-    candidates.forEach(candidate => {
-        const listWithPoints = document.createElement('li');
-        listWithPoints.innerHTML = `${candidate.candidateName} (${candidate.likelyToVote.length * candidate.army / 1000})`;
-        candidates_list.appendChild(listWithPoints);
-    });
-
-
-    //Task5
-
-    function PutCrown(event, element) {
-        const newEmperor = document.getElementsByClassName('newEmperor');
-        // if (something) {
-        //     newEmperor[0].classList.remove('newEmperor');
-        // }
-        if (newEmperor.length > 0) {
-            newEmperor[0].classList.remove('newEmperor');
-        }
-        element.classList.add('newEmperor');
-    }
-    delegate(candidates_list, 'li', 'click', PutCrown);
-
-
-
-
-
-</script>
