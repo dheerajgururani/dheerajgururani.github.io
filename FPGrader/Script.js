@@ -186,7 +186,7 @@ function getGradeFinal(object) {
     let MidtermPoints = object.MidtermPoints;
     let EndtermPoints = object.EndtermPoints;
 
-    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 40 || (MidtermQuizPoints + EndtermQuizPoints) < 25 || MidtermPoints < 50 || EndtermPoints < 50) {
+    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 40 || (MidtermQuizPoints + EndtermQuizPoints) < 20 || MidtermPoints < 50 || EndtermPoints < 50) {
         return "FAILED";
     } else {
 
@@ -194,7 +194,7 @@ function getGradeFinal(object) {
         // X is max 100 average of HWPoints is 15% of X, sum of MidtermQuizPoints and EndtermQuizPoints is 15% of X, MidtermPoints is 35% of X, EndtermPoints is 35% of X
         // calculate X 
         // implement your code here
-        let X = (((HWPoints / 800) * 15) + (((MidtermQuizPoints + +EndtermQuizPoints) / 50) * 15) + ((MidtermPoints / 100) * 35) + ((EndtermPoints / 100) * 35));
+        let X = (((HWPoints / 800) * 15) + (((MidtermQuizPoints + +EndtermQuizPoints) / 40) * 15) + ((MidtermPoints / 100) * 35) + ((EndtermPoints / 100) * 35));
         // console.log(X);
         // console.log((HWPoints / 800) * 15);
         // console.log(((MidtermQuizPoints + +EndtermQuizPoints) / 50) * 15);
