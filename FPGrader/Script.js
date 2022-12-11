@@ -64,6 +64,9 @@ $("#btn").click(function () {
                     } else if (Assignments.includes("EndtermPoints")) {
                         TotalPointsArray[j].EndtermPoints.push(Points);
                     }
+                    else if (Assignments.includes("TheoreticalQuiz")) {
+                        TotalPointsArray[j].TheoreticalQuizPoints.push(Points);
+                    }
                 }
             }
             if (!found) {
@@ -75,7 +78,8 @@ $("#btn").click(function () {
                     MidtermQuizPoints: 0,
                     EndtermQuizPoints: 0,
                     MidtermPoints: 0,
-                    EndtermPoints: 0
+                    EndtermPoints: 0,
+                    TheoreticalQuizPoints: 0
 
                 }
                 if (Assignments.includes("HW")) {
@@ -92,6 +96,10 @@ $("#btn").click(function () {
                     newObject.MidtermPoints = Points;
                 } else if (Assignments.includes("EndtermPoints")) {
                     newObject.EndtermPoints = Points;
+
+                }
+                else if (Assignments.includes("TheoreticalQuiz")) {
+                    newObject.TheoreticalQuizPoints = Points;
                 }
                 TotalPointsArray.push(newObject);
             }
