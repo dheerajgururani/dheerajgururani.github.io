@@ -1,7 +1,7 @@
 
 
 
-let url = 'https://gsx2json.com/api?id=1hFnrv9y1ZTce0tDlWuXTJ9wwrwvFB_rw54-9z4lA8xI&sheet=Sheet1&columns=False';
+// let url = 'https://gsx2json.com/api?id=1hFnrv9y1ZTce0tDlWuXTJ9wwrwvFB_rw54-9z4lA8xI&sheet=Sheet1&columns=False';
 
 
 
@@ -14,7 +14,7 @@ $("#btn").click(function () {
     let x = document.getElementById('link').value;
     if (x != "") {
         x = x.split('/d/')[1].split('/edit')[0];
-        url = 'https://gsx2json.com/api?id=' + x + '&sheet=Sheet1&columns=False';
+        let url = 'https://gsx2json.com/api?id=' + x + '&sheet=Sheet1&columns=False';
     }
 
     console.log(url);
@@ -185,8 +185,23 @@ function getGradeFinal(object) {
     let EndtermQuizPoints = object.EndtermQuizPoints;
     let MidtermPoints = object.MidtermPoints;
     let EndtermPoints = object.EndtermPoints;
+    let TheoreticalQuizPoints = object.TheoreticalQuizPoints;
 
-    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 40 || (MidtermQuizPoints + EndtermQuizPoints) < 20 || MidtermPoints < 50 || EndtermPoints < 50) {
+    if (MidtermPoints > 100) {
+        MidtermPoints = 100;
+    }
+    if (EndtermPoints > 100) {
+        EndtermPoints = 100;
+    }
+    console.log(TheoreticalQuizPoints);
+
+    if (isNaN(TheoreticalQuizPoints)) {
+        TheoreticalQuizPoints = MidtermQuizPoints + EndtermQuizPoints;
+    }
+    console.log(TheoreticalQuizPoints);
+
+
+    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 40 || TheoreticalQuizPoints < 20 || MidtermPoints < 50 || EndtermPoints < 50) {
         return "FAILED";
     } else {
 
@@ -228,6 +243,7 @@ function calculateGrade() {
     let EndtermQuizPoints = document.getElementById("EndtermQuizPoints").value;
     let MidtermPoints = document.getElementById("MidtermPoints").value;
     let EndtermPoints = document.getElementById("EndtermPoints").value;
+    let TheoreticalQuizPoints = document.getElementById("TheoreticalQuizPoints").value;
 
 
     // for (let i = 0; i < HWPointsArray.length; i++) {
@@ -244,7 +260,8 @@ function calculateGrade() {
         EndtermPoints: parseInt(EndtermPoints),
         MiniQuizPoints: parseInt(MiniQuizPoints),
         MidtermQuizPoints: parseInt(MidtermQuizPoints),
-        EndtermQuizPoints: parseInt(EndtermQuizPoints)
+        EndtermQuizPoints: parseInt(EndtermQuizPoints),
+        TheoreticalQuizPoints: parseInt(TheoreticalQuizPoints)
 
 
     }
@@ -261,6 +278,11 @@ function calculateGrade() {
 document.getElementById("getGrade").addEventListener("click", calculateGrade);
 
 document.getElementById("manual").addEventListener("click", function () {
+    document.getElementById("information").classList.remove("py-5");
+    document.getElementById("information").classList.remove("mt-4");
+    document.getElementById("information").classList.add("mt-0");
+
+    document.getElementById("information").classList.add("py-3");
     document.getElementById("selection").style.display = "none";
     document.getElementById("AutoData").style.display = "none";
     document.getElementById("ManualData").style.display = "block";
@@ -268,6 +290,11 @@ document.getElementById("manual").addEventListener("click", function () {
 });
 
 document.getElementById("auto").addEventListener("click", function () {
+    document.getElementById("information").classList.remove("py-5");
+    document.getElementById("information").classList.remove("mt-4");
+    document.getElementById("information").classList.add("mt-0");
+
+    document.getElementById("information").classList.add("py-3");
     document.getElementById("selection").style.display = "none";
     document.getElementById("ManualData").style.display = "none";
     document.getElementById("AutoData").style.display = "block";
@@ -276,6 +303,12 @@ document.getElementById("auto").addEventListener("click", function () {
 // display element with id info when user clicks element with id help
 document.getElementById("help").addEventListener("click", function () {
     document.getElementById("info").style.display = "block";
+});
+
+//on clicking FpGrader , refresh the page
+document.getElementById("FPGrader").addEventListener("click", function () {
+    // return to index.html
+    window.location.href = "index.html";
 });
 
 
