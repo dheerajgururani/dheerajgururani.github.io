@@ -209,7 +209,7 @@ function getGradeFinal(object) {
     console.log(TheoreticalQuizPoints);
 
 
-    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 40 || TheoreticalQuizPoints < 20 || MidtermPoints < 50 || EndtermPoints < 50) {
+    if (HWPoints < 400 || PTPoints < 400 || MiniQuizPoints < 20 || TheoreticalQuizPoints < 20 || MidtermPoints < 50 || EndtermPoints < 50) {
         return "FAILED";
     } else {
 
