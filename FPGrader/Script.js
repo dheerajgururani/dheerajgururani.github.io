@@ -128,3 +128,68 @@ $("#btn").click(function () {
 
     });
 });
+
+function calculateGrade() {
+    // let FullName = document.getElementById("FullName").value;
+    let HWPoints = document.getElementById("HWPoints").value;
+    let PTPoints = document.getElementById("PTPoints").value;
+    // let HWPointsArray = HWPoints.split(",");
+    // let PTPointsArray = PTPoints.split(",");
+    // let HWPointsSum = 0;
+    // let PTPointsSum = 0;
+    let MiniQuizPoints = document.getElementById("MiniQuizPoints").value;
+    let MidtermQuizPoints = document.getElementById("MidtermQuizPoints").value;
+    let EndtermQuizPoints = document.getElementById("EndtermQuizPoints").value;
+    let MidtermPoints = document.getElementById("MidtermPoints").value;
+    let EndtermPoints = document.getElementById("EndtermPoints").value;
+    let TheoreticalQuizPoints = document.getElementById("TheoreticalQuizPoints").value;
+    // for (let i = 0; i < HWPointsArray.length; i++) {
+    //     HWPointsSum += parseInt(HWPointsArray[i]);
+    // }
+    // for (let i = 0; i < PTPointsArray.length; i++) {
+    //     PTPointsSum += parseInt(PTPointsArray[i]);
+    // }
+    let object = {
+        // FullName: FullName,
+        HWPoints: parseInt(HWPoints),
+        PTPoints: parseInt(PTPoints),
+        MidtermPoints: parseInt(MidtermPoints),
+        EndtermPoints: parseInt(EndtermPoints),
+        MiniQuizPoints: parseInt(MiniQuizPoints),
+        MidtermQuizPoints: parseInt(MidtermQuizPoints),
+        EndtermQuizPoints: parseInt(EndtermQuizPoints),
+        TheoreticalQuizPoints: parseInt(TheoreticalQuizPoints)
+    }
+    // console.log(object);
+    let grade = getGradeFinal(object);
+    document.getElementById("grade").innerHTML = grade;
+}
+document.getElementById("getGrade").addEventListener("click", calculateGrade);
+document.getElementById("manual").addEventListener("click", function () {
+    document.getElementById("information").classList.remove("py-5");
+    document.getElementById("information").classList.remove("mt-4");
+    document.getElementById("information").classList.add("mt-0");
+    document.getElementById("information").classList.add("py-3");
+    document.getElementById("selection").style.display = "none";
+    document.getElementById("AutoData").style.display = "none";
+    document.getElementById("ManualData").style.display = "block";
+});
+document.getElementById("auto").addEventListener("click", function () {
+    document.getElementById("information").classList.remove("py-5");
+    document.getElementById("information").classList.remove("mt-4");
+    document.getElementById("information").classList.add("mt-0");
+    document.getElementById("information").classList.add("py-3");
+    document.getElementById("selection").style.display = "none";
+    document.getElementById("ManualData").style.display = "none";
+    document.getElementById("AutoData").style.display = "block";
+});
+// display element with id info when user clicks element with id help
+document.getElementById("help").addEventListener("click", function () {
+    document.getElementById("info").style.display = "block";
+});
+//on clicking FpGrader , refresh the page
+document.getElementById("FPGrader").addEventListener("click", function () {
+    // return to index.html
+    window.location.href = "index.html";
+});
+
